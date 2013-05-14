@@ -1,6 +1,7 @@
 class HotelStay < ActiveRecord::Base
 
   attr_accessible :checkout_at, :hotel_id, :member_id
+  attr_accessor :finalscore
 
   belongs_to :hotel
   belongs_to :member

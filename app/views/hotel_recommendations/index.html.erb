@@ -1,0 +1,15 @@
+<h1>Hotel Recommendation</h1>
+<% if flash.alert %>
+	<div class="alert">
+		<%= flash.alert %>
+	</div>
+<%end%>
+<%= form_tag hotel_recommendations_show_path, :multipart => true  do %>
+    <%= label_tag :member_name %>
+    <%= text_field_tag :name, nil, :placeholder => 'name' %>
+    <br/>
+    <%= label_tag :date %>
+    <%= select_date(Time.now, :order =>[:year, :month, :day]) %>
+    <br/>
+    <%= submit_tag "find it" %>
+<% end %>
